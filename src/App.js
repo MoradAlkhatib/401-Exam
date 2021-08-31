@@ -7,7 +7,9 @@ import {
   Route
 } from "react-router-dom";
 import { withAuth0 } from '@auth0/auth0-react';
-
+import Home from './components/Home';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import FavCrypto from './components/FavCrypto';
 
 class App extends React.Component {
 
@@ -21,9 +23,11 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/">
                 {/* TODO: if the user is logged in, render the `Home` component, if they are not, render the `Login` component */}
+                {isAuthenticated && <Home/>}
               </Route>
-              <Route exact path="/crypto-list">
+              <Route exact path="/favFlowers">
                 {/* TODO: if the user is logged in, render the `FavFlowers` component, if they are not, render the `Login` component */}
+                {isAuthenticated && <FavCrypto/>  }
               </Route>
             </Switch>
             <Footer />
