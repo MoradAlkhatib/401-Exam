@@ -76,7 +76,7 @@ class FavCrypto extends React.Component {
     return(
         <>
            <Modal show={this.showModal} onHide={this.unSetShow}>
-           <Form>
+           <Form onSubmit={(e)=>this.updateFav(e)}>
   
     <Form.Control type="text" name ="title"  placeholder="Enter text" />
     <Form.Control type="text" description ="title" placeholder="Enter text" />
@@ -87,7 +87,7 @@ class FavCrypto extends React.Component {
     Submit
   </Button>
 </Form>
-          <Button variant="primary" onClick={(e)=>this.updateFav(e)}>
+          <Button variant="primary" type='submit'>
             Save Changes
           </Button>
         
